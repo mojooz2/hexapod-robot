@@ -53,6 +53,49 @@ Each leg is a 3-DOF serial chain:
 
 The six legs are arranged around the body at mounting angles of 30°, 90°, 150°, 210°, 270°, and 330°. The structural parts were iterated through multiple 3D-printed prototypes, including bearing-supported joints and a custom central chassis.
 
+### CAD design
+
+The custom mechanical components were designed in **Autodesk Fusion**. The chassis consists of three distinct parts, while all six legs use the same seven unique part designs.
+
+<p align="center">
+  <img src="media/cad/full_hexapod_CAD.png" width="85%" alt="Autodesk Fusion CAD model of the complete 18-DOF hexapod">
+</p>
+<p align="center"><sub><b>Complete hexapod CAD assembly</b></sub></p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="media/cad/single_leg_with_servo_CAD.png" width="100%" alt="Single 3-DOF leg CAD assembly with servo motors">
+      <br><sub><b>3-DOF leg with servos</b></sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="media/cad/single_leg_without_servo_CAD.png" width="100%" alt="Custom 3D-printed leg components without servo motors">
+      <br><sub><b>Custom leg components</b></sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="media/cad/chassis_assembly_CAD.png" width="65%" alt="Autodesk Fusion CAD assembly of the hexapod central chassis">
+</p>
+<p align="center"><sub><b>Central chassis CAD assembly</b></sub></p>
+
+### STEP models and printed-part quantities
+
+The repository provides **10 unique STEP files** for the custom structural parts. Each leg requires 10 printed pieces, for **60 leg pieces** across six legs; the three chassis parts bring the structural total to **63 printed pieces**. This excludes servos, bearings, fasteners, and other purchased hardware.
+
+| Subsystem | STEP files | Printed quantity |
+|---|---|---:|
+| Chassis | [3 chassis models](cad/chassis/) | 3 |
+| Legs | [7 unique leg models](cad/leg/) | 10 per leg (60 total) |
+| **Total** | **10 unique models** | **63** |
+
+See [`cad/README.md`](cad/README.md) for individual STEP downloads and the full per-part quantity table.
+
+### Fabrication and assembly
+
+The following photographs document the progression from individual leg components to the assembled physical robot.
+
 <table>
   <tr>
     <td width="48%" align="center">
@@ -240,8 +283,12 @@ Potential extensions include IMU-based body stabilization, foot/contact sensing,
 ## Repository structure
 
 ```text
-stm32-hexapod/
+hexapod-robot/
 ├── README.md
+├── cad/
+│   ├── README.md
+│   ├── chassis/           # 3 chassis STEP models
+│   └── leg/               # 7 unique leg STEP models
 ├── firmware/
 │   └── Core/
 │       ├── Inc/
@@ -257,6 +304,8 @@ stm32-hexapod/
 │   ├── kinematics.md
 │   └── gait.md
 └── media/
+    ├── README.md
+    ├── cad/               # 4 Autodesk Fusion screenshots
     ├── final/
     └── development/
 ```

@@ -90,4 +90,6 @@ This avoids treating mechanical zero and endpoint PWM values as identical across
 
 The robot's structural parts were 3D printed and iterated throughout development. Bearing-supported pivots were incorporated into the chassis/leg interfaces, and the central structure was designed to carry the controller and high-current power hardware above the leg assembly.
 
-![Power system during integration](../media/development/06_power_stack_prototype.jpg)
+The [mechanical CAD files and per-part quantities](../cad/README.md) are available alongside the [CAD assembly screenshots](../media/cad/).
+
+![Power system during integration](../media/development/06_power_stack_prototype.png)
